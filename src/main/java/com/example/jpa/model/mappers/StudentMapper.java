@@ -5,7 +5,7 @@ import com.example.jpa.model.StudentEntity;
 import com.example.jpa.model.dtos.StudentDTO;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {BaseMapper.class})
 public interface StudentMapper extends BaseMapper<StudentEntity, StudentDTO>{
 
 }

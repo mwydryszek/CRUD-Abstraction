@@ -9,9 +9,4 @@ import java.util.List;
 @Repository
 public interface StudentRepository extends JpaRepository<StudentEntity,Long> {
 
-
-    List<StudentEntity> findStudentEntitiesByFirstName(String firstName);
-
-    List<StudentEntity> findStudentEntitiesByAddressEntity_City(String city);
-
 }

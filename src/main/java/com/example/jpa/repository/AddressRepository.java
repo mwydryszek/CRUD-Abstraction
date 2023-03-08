@@ -11,9 +11,4 @@ import java.util.Optional;
 public interface AddressRepository extends JpaRepository<AddressEntity, Long> {
 
 
-    List<AddressEntity> findAddressEntitiesByCity(String city);
-
-    Optional<AddressEntity> findFirstByCountry(String country);
-
-
 }

@@ -16,7 +16,7 @@ public class DatabaseInitializer {
     private AddressRepository addressRepository;
     private StudentRepository studentRepository;
 
-    //@PostConstruct
+    @PostConstruct
     public void initDatabase(){
 
         AddressEntity addressEntity = AddressEntity.builder()

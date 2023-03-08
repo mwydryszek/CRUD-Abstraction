@@ -4,5 +4,4 @@ public interface BaseMapper<E,D> {
 
     E mapToEntity(D dto);
     D mapToDTO(E entity);
-
 }
