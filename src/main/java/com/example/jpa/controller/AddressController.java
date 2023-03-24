@@ -12,7 +12,6 @@ public class AddressController extends BaseController<AddressDTO, AddressService
 
     private final AddressService addressService;
 
-
     @Override
     protected AddressService getService() {
         return addressService;

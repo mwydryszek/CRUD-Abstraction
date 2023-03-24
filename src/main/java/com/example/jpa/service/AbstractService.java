@@ -9,14 +9,14 @@ import java.util.stream.Collectors;
 
 public abstract class AbstractService<E, D> implements CrudService<D> {
 
-    protected abstract JpaRepository getRepository();
+    protected abstract JpaRepository<E,Long> getRepository();
     protected abstract BaseValidator<D> getValidator();
     protected abstract BaseMapper<E, D> getMapper();
 
     @Override
     public List<D> get() {
-        return (List<D>) getRepository().findAll().stream()
-                //.map(getMapper()::mapToDTO)
+        return getRepository().findAll().stream()
+                .map(getMapper()::mapToDTO)
                 .collect(Collectors.toList());
     }
     @Override
@@ -28,7 +28,7 @@ public abstract class AbstractService<E, D> implements CrudService<D> {
     @Override
     public D update(Long id, D dto) {
         //dto.setId(id);
-        getRepository().delete(id);
+        getRepository().deleteById(id);
         E entity = (E) getRepository().save(getMapper().mapToEntity(dto));
         return getMapper().mapToDTO(entity);
     }
